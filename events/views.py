@@ -134,7 +134,7 @@ def user_login(request):
 		user = authenticate(username=username, password=password)
 		if user:
 			login(request, user)
-			return HttpResponseRedirect('/events/')
+			return HttpResponseRedirect('/')
 		else:
 			print "Invalid login details: {0}, {1}".format(username, password)
 			return HttpResponse("Invalid login details supplied.")
@@ -146,7 +146,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
 	logout(request)
-	return HttpResponseRedirect('/events/')
+	return HttpResponseRedirect('/')
 
 
 

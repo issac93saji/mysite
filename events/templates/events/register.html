@@ -4,24 +4,22 @@
 
 {% block body_block %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
-
+<a href="/"><--Back to home</a>
 <div class="container">
 
         <h1>Register with Events @ Sayone...</h1>
 
         {% if registered %}
             <strong>thank you for registering!</strong>
-            <a href="/events/">Return to the homepage.</a><br />
+            <a href="/">Return to the homepage.</a><br />
         {% else %}
             <br>
             <strong>register here!</strong><br/><br>
 
 
 
-        <form id="user_form" method="post" action="/events/register/"
+        <form id="user_form" method="post" action="/register"
                 enctype="multipart/form-data">
 
             {% csrf_token %}
