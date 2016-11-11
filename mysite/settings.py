@@ -223,7 +223,7 @@ print(".............................mediaROOT.............")
 print(MEDIA_ROOT)
 print("........................")
 
-SITE_ID = 2
+SITE_ID = 3
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
