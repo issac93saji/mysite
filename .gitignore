@@ -5,8 +5,9 @@
 .*.swp
 *.bak
 
+mysite/settings_local.py
 settings_local.py
-db.sqlite3
+*.sqlite3
 /media/
 /www/
 /uploads/
