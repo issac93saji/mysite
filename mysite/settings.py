@@ -3,8 +3,16 @@
 import os
 import dj_database_url
 
+
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("+++++++++++++++++++++++++++++++++++++++++",BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -175,8 +183,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    STATIC_ROOT,
+	"/static/"
+)
+
+# STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = (
+#     STATIC_PATH,
+# 	"/static/"
+# )
+
+# print("=======================STATIC_ROOT========", STATIC_ROOT)
+# print("=======================STATIC_URL==============", STATIC_URL)
+
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (
@@ -197,7 +220,7 @@ print(MEDIA_ROOT)
 print("........................")
 
 SITE_ID = 2
-LOGIN_REDIRECT_URL = '/events/'
+LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'

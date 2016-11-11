@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^',include('events.urls')),
     url(r'^admin/', admin.site.urls),
 	url(r'^accounts/', include('allauth.urls')),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
