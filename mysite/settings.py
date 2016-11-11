@@ -118,22 +118,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'eventsdb',
-#         'USER': 'issac',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-#
-# DATABASES = {'default': dj_database_url.config(default='postgres://issac:bar@localhost:5432/eventsdb')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'eventsdb',
+        'USER': 'issac',
+        'PASSWORD': 'sayone',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+DATABASES = {'default': dj_database_url.config(default='postgres://issac:sayone@localhost:5432/eventsdb')}
 
 #for heroku
 db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
+DATABASES['default'].update(db_from_env)
 
 
 
@@ -204,10 +204,10 @@ EMAIL_PORT = 1025
 
 
 ### for local_settings
-try:
-    from .settings_local import *
-except ImportError:
-    pass
+# try:
+#     from .settings_local import *
+# except ImportError:
+#     pass
 
 
 
