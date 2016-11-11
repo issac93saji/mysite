@@ -160,10 +160,9 @@ def contact(request):
 			contactf=contactform.save();
 			contactf.save()
 			saved=True
-			msg="saved successfully 123123123..............."
 			print("................return 1")
 			# return render(request,'events/index.html',{'contactsaved':saved})
-			return HttpResponse(msg)
+			return HttpResponse()
 		else:
 			print("................return 2")
 			print contactform.errors

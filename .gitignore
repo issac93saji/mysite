@@ -13,8 +13,8 @@ settings_local.py
 /uploads/
 /static/
 /logs/*.log
-
+/taskapp123/
 .project
 .metadata/
 .pydevproject
-
+/.idea/
